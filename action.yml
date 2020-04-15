@@ -1,6 +1,6 @@
 name: 'Slack Notifications'
 description: 'This action will send a notification to Slack'
-author: 'rtCamp'
+author: 'Mint Hosting'
 runs:
   using: 'docker'
   image: 'docker://mintservices/action-slack-notify'

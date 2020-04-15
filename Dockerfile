@@ -20,8 +20,6 @@ FROM alpine@sha256:46e71df1e5191ab8b8034c5189e325258ec44ea739bba1e5645cff83c9048
 
 COPY --from=builder /go/bin/slack-notify /usr/bin/slack-notify
 
-ENV VAULT_VERSION 1.0.2
-
 RUN apk update \
 	&& apk upgrade \
 	&& apk add \
@@ -32,12 +30,6 @@ RUN apk update \
 	py2-pip && \
 	pip install shyaml && \
 	rm -rf /var/cache/apk/*
-
-# Setup Vault
-RUN wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && \
-	unzip vault_${VAULT_VERSION}_linux_amd64.zip && \
-	rm vault_${VAULT_VERSION}_linux_amd64.zip && \
-	mv vault /usr/local/bin/vault
 
 # fix the missing dependency - https://stackoverflow.com/a/35613430
 RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2

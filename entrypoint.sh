@@ -5,12 +5,6 @@ flag=0
 if [[ -z "$SLACK_WEBHOOK" ]]; then
     flag=1
     missing_secret="SLACK_WEBHOOK"
-    if [[ -n "$VAULT_ADDR" ]] && [[ -n "$VAULT_TOKEN" ]]; then
-        flag=0
-    fi
-    if [[ -n "$VAULT_ADDR" ]] || [[ -n "$VAULT_TOKEN" ]]; then
-        missing_secret="VAULT_ADDR and/or VAULT_TOKEN"
-    fi
 fi
 
 if [[ "$flag" -eq 1 ]]; then
