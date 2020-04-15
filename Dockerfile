@@ -26,9 +26,6 @@ RUN apk update \
 	bash \
 	jq \
 	ca-certificates \
-	python \
-	py2-pip && \
-	pip install shyaml && \
 	rm -rf /var/cache/apk/*
 
 # fix the missing dependency - https://stackoverflow.com/a/35613430

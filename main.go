@@ -18,9 +18,6 @@ const (
 	EnvSlackColor     = "SLACK_COLOR"
 	EnvSlackUserName  = "SLACK_USERNAME"
 	EnvGithubActor    = "GITHUB_ACTOR"
-	EnvSiteName       = "SITE_NAME"
-	EnvHostName       = "HOST_NAME"
-	EnvDepolyPath     = "DEPLOY_PATH"
 )
 
 type Webhook struct {
@@ -83,23 +80,6 @@ func main() {
 			Value: envOr(EnvSlackMessage, "EOM"),
 			Short: false,
 		},
-	}
-
-	hostName := os.Getenv(EnvHostName)
-	if hostName != "" {
-		newfields:= []Field{
-			{
-				Title: os.Getenv("SITE_TITLE"),
-				Value: os.Getenv(EnvSiteName),
-				Short: true,
-			},
-			{
-				Title: os.Getenv("HOST_TITLE"),
-				Value: os.Getenv(EnvHostName),
-				Short: true,
-			},
-		}
-		fields = append(newfields, fields...)
 	}
 
 	msg := Webhook{
