@@ -1,9 +1,4 @@
-This action is a part of [GitHub Actions Library](https://github.com/rtCamp/github-actions-library/) created by [rtCamp](https://github.com/rtCamp/).
-
 # Slack Notify - GitHub Action
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-
-
 A [GitHub Action](https://github.com/features/actions) to send a message to a Slack channel.
 
 **Screenshot**
@@ -104,11 +99,3 @@ jobs:
 GitHub action uses `VAULT_TOKEN` to connect to `VAULT_ADDR` to retrieve slack webhook from Vault.
 
 In the Vault, the Slack webhook should be setup as field `webhook` on path `secret/slack`.
-
-## License
-
-[MIT](LICENSE) © 2019 rtCamp
-
-## Does this interest you?
-
-<a href="https://rtcamp.com/"><img src="https://rtcamp.com/wp-content/uploads/2019/04/github-banner@2x.png" alt="Join us at rtCamp, we specialize in providing high performance enterprise WordPress solutions"></a>
